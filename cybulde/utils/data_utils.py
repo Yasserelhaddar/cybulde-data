@@ -21,13 +21,13 @@ def initialize_dvc() -> None:
     run_shell_command("git add .dvc")
     run_shell_command("git commit -nm 'Initialized DVC'")
 
-def is_dvc_storage_initialized(dvc_remote_name):
-    return not run_shell_command("dvc remote list")
+def is_dvc_storage_initialized():
+    return run_shell_command("dvc remote list")
 
 
 def initialize_dvc_storage(dvc_remote_name: str, dvc_remote_url: str) -> None:
 
-    if is_dvc_storage_initialized(dvc_remote_name):
+    if is_dvc_storage_initialized():
         DATA_UTILS_LOGGER.info(f"DVC storage {dvc_remote_name} is already initialized")
         return
     
