@@ -8,4 +8,10 @@ def get_logger(name: str) ->  logging.Logger:
 
 
 def run_shell_command(cmd: str) -> str:
-    return subprocess.run(cmd, text=True, shell=True, check=True, capture_output=True).stdout
+    try:
+        return subprocess.run(cmd, text=True, shell=True, check=True, capture_output=True).stdout
+    except Exception as e:
+        print(e)
+        return subprocess.run(cmd, text=True, shell=True, check=True, capture_output=True).stdout
+
+        
