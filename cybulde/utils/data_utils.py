@@ -32,7 +32,7 @@ def initialize_dvc_storage(dvc_remote_name: str, dvc_remote_url: str) -> None:
         return
     
     DATA_UTILS_LOGGER.info(f"Initialing DVC storage {dvc_remote_name}")
-    run_shell_command(f"dvc remote add -d {dvc_remote_name} {dvc_remote_url}")
+    run_shell_command(f"dvc remote add -d -f {dvc_remote_name} {dvc_remote_url}")
     run_shell_command(f"dvc push -r {dvc_remote_name}")
     run_shell_command("git add .dvc/config")
     run_shell_command(f"git commit -nm 'Initilized DVC storage {dvc_remote_name}'")
