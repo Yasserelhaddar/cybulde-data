@@ -22,7 +22,6 @@ def initialize_dvc() -> None:
     run_shell_command("git commit -nm 'Initialized DVC'")
 
 def is_dvc_storage_initialized():
-
     return run_shell_command("dvc remote list")
 
 
