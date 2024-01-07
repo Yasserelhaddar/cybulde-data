@@ -48,7 +48,7 @@ USER ${USER_NAME}
 
 RUN git config --global user.email "yasserelhaddar@gmail.com" \
     && git config --global user.name "Yasserelhaddar" \
-    && git config --global user.password "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"
+    && git config --global user.password "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"
 
 COPY . /app/
 CMD ["/startup-script.sh"]
